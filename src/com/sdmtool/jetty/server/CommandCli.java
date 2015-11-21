@@ -60,7 +60,7 @@ public class CommandCli {
 			}
 			if (cmd.hasOption("w")) {
 				log.log(Level.INFO, "Using argument -w=" + cmd.getOptionValue("w"));
-				String warFileLocation = cmd.getOptionValue("l");
+				String warFileLocation = cmd.getOptionValue("w");
 				command.setWarFileLocation(warFileLocation);
 			} else {
 				log.log(Level.SEVERE, "Missing w (WAR file)");
