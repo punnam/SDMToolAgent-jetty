@@ -22,6 +22,8 @@ public class CommandCli {
 		options.addOption("p", "port", true, "Port Number");
 		options.addOption("c", "contextRoot", true, "Context Root Of Application");
 		options.addOption("w", "war", true, "WAR file name with location");
+		options.addOption("s", "server", true, "SDM Server URL");
+		
 	}
 
 	public CommandMap parse() {
@@ -64,6 +66,14 @@ public class CommandCli {
 				command.setWarFileLocation(warFileLocation);
 			} else {
 				log.log(Level.SEVERE, "Missing w (WAR file)");
+				help();
+			}
+			if (cmd.hasOption("s")) {
+				log.log(Level.INFO, "Using argument -s=" + cmd.getOptionValue("s"));
+				String serverurl = cmd.getOptionValue("s");
+				command.setSdmServerUrl(serverurl);
+			} else {
+				log.log(Level.SEVERE, "Missing s (SDM server url)");
 				help();
 			}
 		} catch (ParseException e) {

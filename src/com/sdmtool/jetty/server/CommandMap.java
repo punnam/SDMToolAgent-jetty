@@ -4,6 +4,7 @@ public class CommandMap {
 	private int portNum;
 	private String contextRoot;
 	private String warFile;
+	private String sdmServerUrl;
 	public int getPortNum() {
 		return portNum;
 	}
@@ -21,5 +22,11 @@ public class CommandMap {
 	}
 	public void setWarFileLocation(String warFile) {
 		this.warFile = warFile;
+	}
+	public String getSdmServerUrl() {
+		return sdmServerUrl;
+	}
+	public void setSdmServerUrl(String sdmServerUrl) {
+		this.sdmServerUrl = sdmServerUrl;
 	}
 }
