@@ -22,7 +22,7 @@ public class CommandCli {
 		options.addOption("p", "port", true, "Port Number");
 		options.addOption("c", "contextRoot", true, "Context Root Of Application");
 		options.addOption("w", "war", true, "WAR file name with location");
-		options.addOption("s", "server", true, "SDM Server URL");
+		options.addOption("s", "server", false, "SDM Server URL");
 		
 	}
 
@@ -72,10 +72,7 @@ public class CommandCli {
 				log.log(Level.INFO, "Using argument -s=" + cmd.getOptionValue("s"));
 				String serverurl = cmd.getOptionValue("s");
 				command.setSdmServerUrl(serverurl);
-			} else {
-				log.log(Level.SEVERE, "Missing s (SDM server url)");
-				help();
-			}
+			} 
 		} catch (ParseException e) {
 			log.log(Level.SEVERE, "Failed to parse comand line properties", e);
 			help();

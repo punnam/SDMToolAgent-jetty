@@ -56,7 +56,7 @@ public class SDMToolAgent {
         // wait until the server is done executing.
         // See http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
         server.join();
-        sendPost(commandMap);
+        //sendPost(commandMap);
     }
 
 	private static void sendPost(CommandMap commandMap) throws Exception {
